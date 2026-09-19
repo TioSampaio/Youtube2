@@ -77,7 +77,7 @@ body {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0; /* Impede que o flexbox estique a imagem */
+    flex-shrink: 0;
 }
 
 .user-description {
