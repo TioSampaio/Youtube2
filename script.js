@@ -1,14 +1,14 @@
-const menu = document.getElementById("menu")
-const overlay = document.getElementById("overlay")
-const btnmenu = document.getElementById("btn.menu")
-const btnclose = document.getElementById("btn.close")
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const btnmenu = document.getElementById("btn.menu");
+const btnclose = document.getElementById("btn.close");
 
-function openMenu(){
+function openMenu() {
     menu.classList.add("aberto");
     overlay.classList.add("aberto");
 }
 
-function closeMenu(){
+function closeMenu() {
     menu.classList.remove("aberto");
     overlay.classList.remove("aberto");
 }

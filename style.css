@@ -1,113 +1,147 @@
-body{
+body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
 }
 
-.head{
+.head {
     position: sticky;
     top: 0;
-    background-color: rgb(170, 170, 170);
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 15px 20px;
     justify-content: space-between;
-
-    i{font-size: 40px}
+    align-items: center;
+    z-index: 10;
 }
 
-.video-box{
-    width: 450px;
+.head i {
+    font-size: 24px;
+    cursor: pointer;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.img-video{
-    width: 450px;
-    border-radius: 10px;
+.video-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.video-title{
-    font-size: 22px;
+.img-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.img-video:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.video-title {
+    font-size: 16px;
     font-weight: 600;
-    margin: 2px;
-    margin-left: 0;
+    margin: 0;
+    color: #0f0f0f;
 }
 
-.video-user{
+.video-user {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-user, .user img {
+    width: 40px;
     height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que o flexbox estique a imagem */
 }
 
-.user{
-    display: flex;
-    flex-direction: row;
-    width: 79.5%;
-    gap: 10px;
-}
-
-.user-description{
+.user-description {
     display: flex;
     flex-direction: column;
 }
 
-.user-name{
+.user-name {
     font-size: 14px;
+    font-weight: 500;
     margin: 0;
+    color: #0f0f0f;
 }
 
-.user-subs{
+.user-subs {
     font-size: 12px;
     margin: 0;
+    color: #606060;
 }
 
-.subscribe{
-    border-radius: 30px;
-    background: black;
-    border: solid black 1px;
+.subscribe {
+    border-radius: 20px;
+    background: #0f0f0f;
+    border: none;
     color: white;
+    padding: 8px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.overlay{
+.subscribe:hover {
+    background: #272727;
+}
+
+.overlay {
     position: fixed;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
     z-index: 20;
     inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.overlay.aberto{
+.overlay.aberto {
     opacity: 1;
     pointer-events: auto;
 }
 
-.menu{
+.menu {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
+    width: 250px;
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     z-index: 30; 
     background: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
-.menu.aberto{
+.menu.aberto {
     transform: translateX(0);
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: 500px 500px;
-    gap: 40px;
-    padding: 40px;
-}
-
-.logo-user{
-    width: 40px;
-    height: 40px;
-}
-
-.header-grids{
-    position: center;
 }
